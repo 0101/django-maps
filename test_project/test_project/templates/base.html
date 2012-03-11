@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Django Maps Test Project</title>
+		<style>body {max-width:960px; margin:0 auto;}</style>
+	</head>
+
+	<body>
+        <h1>Django Maps Test Project</h1>
+
+        <a href="{% url index %}">basic</a> | <a href="{% url two-maps %}">multiple maps</a>
+
+        {% block content %}{% endblock %}
+
+	</body>
+</html>

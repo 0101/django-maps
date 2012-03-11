@@ -1,0 +1,12 @@
+{% if not api_loaded %}
+{# load jQuery if there already isn't one #}
+<script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js">\x3C/script>')</script>
+
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?{% if API_KEY %}key={{ API_KEY }}&{% endif %}sensor=false"></script>
+
+<script src="{{ STATIC_URL }}django_maps/js/googlemap.js"></script>
+{% endif %}
+
+<script type="text/javascript">
+    window.{{ var_name }} = new django_maps.GoogleMap('{{ selector }}');
+</script>

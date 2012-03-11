@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="map1"></div>
+<br/>
+<div class="map2"></div>
+
+{% load map add_route from googlemaps %}
+
+{% map '.map1' var_name='map1' %}
+
+{% add_route my_route color='blue' map='map1' %}
+
+{% map '.map2' var_name='map2' %}
+
+<script type="text/javascript">
+	map2.addRoute([
+		{lat: 50.07923, lng: 14.43282},
+		{lat: 50.07807, lng: 14.43621},
+		{lat: 50.07598, lng: 14.43479},
+		{lat: 50.07584, lng: 14.43507},
+		{lat: 50.07086, lng: 14.43676},
+	], {color: 'red'});
+</script>
+
+{% endblock %}

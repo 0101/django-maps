@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="map1"></div>
+
+{# load map template tags #}
+{% load map add_route from googlemaps %}
+
+{# create map in given element #}
+{% map '.map1' %}
+
+{# create route from data stored in template variable #}
+{% add_route my_route color='blue'%}
+
+{# create route from javascript #}
+<script type="text/javascript">
+	Map.addRoute([
+		{lat: 50.07923, lng: 14.43282},
+		{lat: 50.07807, lng: 14.43621},
+		{lat: 50.07598, lng: 14.43479},
+		{lat: 50.07584, lng: 14.43507},
+		{lat: 50.07086, lng: 14.43676},
+	], {color: 'red'});
+</script>
+
+{% endblock %}
